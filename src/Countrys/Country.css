@@ -1,0 +1,14 @@
+.country {
+  border: 1px solid red;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(241, 239, 239, 0.985);
+  color: black;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
