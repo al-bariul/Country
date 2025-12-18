@@ -7,12 +7,12 @@ const Countries = ({ countriesPromise }) => {
   const storeCountriesPromise = use(countriesPromise);
   const receiveCountryProperty = storeCountriesPromise.countries;
 
-  // console.log(storeCountriesPromise);
-  // console.log(receiveCountryProperty);
+  
 
   return (
     <div>
       <h1>Total Country : {receiveCountryProperty.length}</h1>
+      <h3>Total visited country : </h3>
       <div className="grid">
         {receiveCountryProperty.map((sendData) => (
           <ShowCountry
