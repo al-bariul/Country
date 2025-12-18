@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./Country.css";
 
-const ShowCountry = ({ sendData }) => {
+const ShowCountry = ({ sendData, handleVisitedCountry }) => {
   //   const { name } = sendData;
-  //   console.log(sendData.flags.flags.alt);
+  //   console.log(handleVisitedCountry);
   const population = `${sendData.population.population / 1000}`;
 
   const [visited, setVisited] = useState(false);
@@ -26,6 +26,8 @@ const ShowCountry = ({ sendData }) => {
     setVisited(!visited);
     */
     }
+
+    handleVisitedCountry(sendData);
   };
 
   return (
