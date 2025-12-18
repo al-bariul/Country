@@ -7,26 +7,9 @@ const ShowCountry = ({ sendData, handleVisitedCountry }) => {
   const population = `${sendData.population.population / 1000}`;
 
   const [visited, setVisited] = useState(false);
-  const handleVisited = () => {
-    // setVisited(true);
-    if (visited) {
-      setVisited(false);
-    } else {
-      setVisited(true);
-    }
-    // OR
-    {
-      /*
-    setVisited(visited ? false : true);
-    */
-    }
-    // OR
-    {
-      /*
-    setVisited(!visited);
-    */
-    }
 
+  const handleVisited = () => {
+    setVisited(!visited);
     handleVisitedCountry(sendData);
   };
 
@@ -59,3 +42,32 @@ const ShowCountry = ({ sendData, handleVisitedCountry }) => {
 };
 
 export default ShowCountry;
+
+{
+  /*}
+const handleVisited = () => {
+  // setVisited(true);
+  if (visited) {
+    setVisited(false);
+  } else {
+    setVisited(true);
+  }
+  // OR
+  {
+    /*
+    setVisited(visited ? false : true);
+    */
+}
+// OR
+{
+  /*
+    setVisited(!visited);
+    */
+}
+{
+  /*}
+  handleVisitedCountry(sendData);
+};
+
+*/
+}

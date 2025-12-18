@@ -8,10 +8,27 @@ const Countries = ({ countriesPromise }) => {
   const receiveCountryProperty = storeCountriesPromise.countries;
 
   const [visitedCountry, setVisitedCountry] = useState([]);
-  const handleVisitedCountry = (sendData) => {
-    console.log(sendData);
-    const newVisitedCounties = [...visitedCountry, sendData];
-    setVisitedCountry(newVisitedCounties);
+
+  {
+    /*
+    const handleVisitedCountry = (sendData) => {
+      const newVisitedCounties = [...visitedCountry, sendData];
+      setVisitedCountry(newVisitedCounties);
+    };
+  */
+  }
+
+  const handleVisitedCountry = (country) => {
+    const isVisited = visitedCountry.find((c) => c.cca3 === country.cca3);
+
+    if (isVisited) {
+      // remove
+      const remaining = visitedCountry.filter((c) => c.cca3 !== country.cca3);
+      setVisitedCountry(remaining);
+    } else {
+      // add
+      setVisitedCountry([...visitedCountry, country]);
+    }
   };
 
   return (
